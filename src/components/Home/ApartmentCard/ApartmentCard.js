@@ -13,8 +13,8 @@ const Apartment=[{id:1,img:"https://i.ibb.co/0rFr4pd/Rectangle-394.png",title:"W
 {id:6,img:"https://i.ibb.co/7V4CrwM/Rectangle-404.png",title:"Washington Avenue",location:`${location}`,bathroom:`${bathroom}`,bedroom:`${bedroom}`,price:283}]
 const ApartmentCard = () => {
     return (
-        <div>
-            <div className="flex-column">
+        <div style={{backgroundColor:' #E5E5E5'}} className="pt-3">
+            <div className="flex-column mb-3">
                 <small>House Rent</small>
                 <h2>Discover the latest Rent</h2>
                 <h2>available today</h2>

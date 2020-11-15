@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ApartmentCardChild = ({apartment}) => {
-    return (<div className="col-md-4 mb-3">
+    return (<div className="col-md-4 mb-3 container ">
         <div class="card  " >
         <img src={apartment.img} class="card-img-top" alt="..."/>
         <div class="card-body">
@@ -12,8 +12,8 @@ const ApartmentCardChild = ({apartment}) => {
 <div className="d-flex col-md-6"><img className="mr-1" style={{height:'20px'}} src={apartment.bedroom}/><p>3 bedrooms</p></div>
 <div className="d-flex col-md-6"><img  className="mr-1"style={{height:'20px'}}src={apartment.bathroom}/><p>2 bathroom</p></div>
           </div><div className="d-flex ">
-  <h4 style={{fontWeight:'bolder'}}  className="mr-5">${apartment.price}</h4>
-          <button class="btn text-white ml-5 pl-3 pr-3 " type="button" id="button-addon2" style={{backgroundColor:"#275A53"}}>Find Now</button></div>
+  <h4 style={{fontWeight:'bolder',fontSize:"30px",color:"#275A53"}}  className="mr-5">${apartment.price}</h4>
+          <button class="btn text-white ml-4  " type="button" id="button-addon2" style={{backgroundColor:"#275A53"}}>View Details</button></div>
         </div>
       </div>
       </div>

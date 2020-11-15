@@ -7,13 +7,13 @@ const Service=[
 
 const Services = () => {
     return (
-        <div >
-            <div className="flex-column">
+        <div className="pb-5" style={{backgroundColor:' #E5E5E5'}} >
+            <div className="flex-column pt-3 pb-2">
                 <small>Service</small>
                 <h2>We're an agency tailored to all</h2>
                 <h2>clients' needs that always delivers</h2>
             </div>
-            <section className="d-flex justify-content-center">
+            <section className="d-flex mt-3 justify-content-center">
             <div className="w-75 row">
                 {
                     Service.map(service => <ServiceDetails service={service} key={service.title}></ServiceDetails>)
