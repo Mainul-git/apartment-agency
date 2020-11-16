@@ -1,19 +1,14 @@
-
 .HeaderMain-body{
     position: relative; 
     height: 50vh;
     width: 100%;
-   background-color: black;
+    background-color: black;
     background-size: cover;
-   
-    background-image: url(https://i.ibb.co/ScyDkzq/Rectangle-13.png);
-    
-    
+    background-image: url('../../../images/bg.jpg');
+    color: white;
 }
 
 .HeaderMain-body ::before{
-    
-
     content: "";
     position: absolute;
     top: 0px;
@@ -21,9 +16,11 @@
     bottom: 0px;
     left: 0px;
     background-color:black;
-
     opacity: 0.008;
-    
-    
-  }
+}
+
+.input-group input{
+    width: 70%;
+    color: white;
+}
  

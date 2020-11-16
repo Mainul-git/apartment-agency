@@ -1,20 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import Home from './components/Home/Home';
+import Home from './components/HomePage/Home/Home';
+import ApartmentDetails from './components/ApartmentDetailsPage/ApartmentDetails/ApartmentDetails';
 
 function App() {
   return (
     <div className="App">
   <Router>
     <Switch>"
-      <Route path="/">
-        <Home></Home>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/apartment">
+        <ApartmentDetails />
       </Route>
     </Switch>
   </Router>

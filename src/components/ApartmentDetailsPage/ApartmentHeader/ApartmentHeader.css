@@ -1,0 +1,9 @@
+.apartment-bg {
+    background-image: url('../../../images/bg.jpg');
+    height: 250px;
+    background-size: cover;
+}
+
+.apartment-bg h1 {
+    color: white;
+}
