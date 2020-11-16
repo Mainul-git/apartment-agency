@@ -32,7 +32,7 @@ const ApartmentBody = () => {
                     <div className="col-md-8">
                         <img align="left" width="760px" src={presentPic} alt="" />
                         {
-                            pic.map(pic => <img onClick={() => setPresentPic(pic)} className={`${presentPic == pic ? 'pic-active' : 'pic-not-active'}`} src={pic} width="150px" alt="" />)
+                            pic.map(pic => <img onMouseEnter={() => setPresentPic(pic)} className={`${presentPic == pic ? 'pic-active' : 'pic-not-active'}`} src={pic} width="150px" alt="" />)
                         }
                     </div>
                     <div className="col-md-4">
