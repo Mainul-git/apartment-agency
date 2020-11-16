@@ -1,0 +1,12 @@
+.custom-container {
+    width: 80%;
+    margin: auto;
+}
+
+.pic-active {
+    border: 5px solid #275A53;
+}
+
+.pic-not-active {
+    border: 5px solid white;
+}

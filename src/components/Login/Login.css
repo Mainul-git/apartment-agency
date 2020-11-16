@@ -1,0 +1,35 @@
+.login-box{
+    width: 400px;
+    margin-top: 50px;
+}
+
+.login-btn {
+    width: 400px;
+}
+
+.toggle-btn{
+    color: green;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.user{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.user img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.notification {
+    text-align: center;
+    max-width: 400px;
+}
+
+.login-container {
+    width: 50%;
+    margin: auto;
+}
