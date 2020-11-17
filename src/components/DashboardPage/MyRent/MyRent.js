@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import OrderListUserSingle from '../OrderListUserSingle/OrderListUserSingle';
+import MyRentSingle from '../MyRentSingle/MyRentSingle';
 
-const OrderListUser = () => {
+const MyRent = () => {
 
     const name = JSON.parse(localStorage.getItem("name"));
     const [orderList, setOrderList] = useState([]);
@@ -15,14 +15,14 @@ const OrderListUser = () => {
     return (
         <div>
             <div className="mt-5 mr-5 d-flex justify-content-between">
-                <h3>Your Order List</h3>
+                <h3>My Rent</h3>
                 <h3>{name}</h3>
             </div>
             {orderList.length > 0 ? 
             <div className="order-box p-5">
                 <div className="row">
                     {
-                        orderList.map((order => <OrderListUserSingle key={order._id} order={order} />))
+                        orderList.map((order => <MyRentSingle key={order._id} order={order} />))
                     }
                 </div>
             </div>
@@ -35,4 +35,4 @@ const OrderListUser = () => {
     );
 };
 
-export default OrderListUser;
+export default MyRent;
