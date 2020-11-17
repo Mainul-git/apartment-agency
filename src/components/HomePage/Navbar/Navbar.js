@@ -3,7 +3,6 @@ import logo from '../../../logos/Logo.png'
 const Navbar = () => {
 
   const userToken = localStorage.getItem('userToken');
-  console.log(userToken);
 
   const logOut = () => {
     localStorage.clear();
