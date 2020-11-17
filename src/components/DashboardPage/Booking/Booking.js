@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import OrderListAdminSingle from '../OrderListAdminSingle/OrderListAdminSingle';
+import OrderListAdminSingle from '../BookingSingle/BookingSingle';
 
-const OrderListAdmin = () => {
+const Booking = () => {
 
     const [orderList, setOrderList] = useState([]);
 
@@ -16,7 +16,7 @@ const OrderListAdmin = () => {
     return (
         <div>
             <div className="mt-5 mr-5 d-flex justify-content-between">
-                <h3>All Order List</h3>
+                <h3>Booking List</h3>
                 <h3>{name}</h3>
             </div>
             {
@@ -51,4 +51,4 @@ const OrderListAdmin = () => {
     );
 };
 
-export default OrderListAdmin;
+export default Booking;

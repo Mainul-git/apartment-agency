@@ -37,7 +37,8 @@ const MakeAdmin = () => {
                         <label>Email</label>
                         <input onBlur={handleBlur} name="email" className="form-control" type="email" placeholder="Your Email" /><br />
                     </div>
-                    <input type="submit" value="Submit" className="custom-btn" />
+                    <button type="submit" className="btn text-white" style={{ backgroundColor: "#275A53" }}>Submit</button>
+                    {/* <input type="submit" value="Submit" className="custom-btn" /> */}
                 </form>
             </div>
         </div>
