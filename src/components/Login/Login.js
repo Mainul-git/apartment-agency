@@ -5,12 +5,21 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from './firebase.config';
 import { useHistory, useLocation } from 'react-router-dom';
+// import { signin } from '../../Redux/actions/LogActions';
+// import { connect } from 'react-redux';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-const Login = () => {
+const Login = (props) => {
+// const{user}=props;
+// const mainUser={
+//     sName: 'fahim',
+//     location:'dhaka'
+// }
+// const finalUser={ ...user,mainUser}
+// console.log(user)
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     var fbProvider = new firebase.auth.FacebookAuthProvider();
@@ -74,5 +83,14 @@ const Login = () => {
         </div>
     );
 };
+// const mapStateToProps = state =>{
+//     return {
+//         user: state.user
+//     }
+// }
 
-export default Login;
+// const mapDispatchToProps = {
+//     signin: signin
+// }
+// connect(mapStateToProps, mapDispatchToProps)(Login)
+export default  Login;
