@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const OrderListAdminSingle = ({ order }) => {
+const BookingSingle = ({ order }) => {
 
     const classes = useStyles();
     const [status, setStatus] = useState('');
@@ -67,4 +67,4 @@ const OrderListAdminSingle = ({ order }) => {
     );
 };
 
-export default OrderListAdminSingle;
+export default BookingSingle;

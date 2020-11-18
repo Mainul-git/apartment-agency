@@ -1,11 +1,11 @@
 import React from 'react';
-import './OrderListUserSingle.css';
+import './MyRentSingle.css';
 import { useSpring, animated } from 'react-spring';
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const OrderListUserSingle = ({ order }) => {
+const MyRentSingle = ({ order }) => {
 
     const email = JSON.parse(localStorage.getItem("email"));
 
@@ -67,4 +67,4 @@ const OrderListUserSingle = ({ order }) => {
     );
 };
 
-export default OrderListUserSingle;
+export default MyRentSingle;
