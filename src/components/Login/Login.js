@@ -5,22 +5,12 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from './firebase.config';
 import { useHistory, useLocation } from 'react-router-dom';
-// import { signin } from '../../Redux/actions/LogActions';
-// import { connect } from 'react-redux';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-const Login = (props) => {
-// const{user}=props;
-// const mainUser={
-//     sName: 'fahim',
-//     location:'dhaka'
-// }
-// const finalUser={ ...user,mainUser}
-// console.log(user)
-
+const Login = () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     var fbProvider = new firebase.auth.FacebookAuthProvider();
 
@@ -51,13 +41,13 @@ const Login = (props) => {
 
     const handleFbLogin = () => {
         firebase.auth().signInWithPopup(fbProvider)
-            .then( result => {
+            .then(result => {
                 const token = result.credential.accessToken;
                 const user = result.user;
                 console.log(token, user);
                 successLogin(token);
             })
-            .catch( error => {
+            .catch(error => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
@@ -83,14 +73,5 @@ const Login = (props) => {
         </div>
     );
 };
-// const mapStateToProps = state =>{
-//     return {
-//         user: state.user
-//     }
-// }
 
-// const mapDispatchToProps = {
-//     signin: signin
-// }
-// connect(mapStateToProps, mapDispatchToProps)(Login)
-export default  Login;
+export default Login;
