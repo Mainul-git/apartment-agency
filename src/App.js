@@ -25,9 +25,9 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          {/* <Route path="/dashboard">
+          <Route path="/dashboard">
             <Dashboard />
-          </Route> */}
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>
