@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyAniryDZ-vshCv6U1P7mlC0JAS7ij2uu7Y",
-  authDomain: "apartment-agency.firebaseapp.com",
-  databaseURL: "https://apartment-agency.firebaseio.com",
-  projectId: "apartment-agency",
-  storageBucket: "apartment-agency.appspot.com",
-  messagingSenderId: "480420753855",
-  appId: "1:480420753855:web:5ed2ebbdf2cc5d384e710a"
+  apiKey: "AIzaSyCLcgEGZl9WrKsHiFOtL9ZepvRwBDQ7BOg",
+  authDomain: "apartment-hunt-dhaka.firebaseapp.com",
+  databaseURL: "https://apartment-hunt-dhaka.firebaseio.com",
+  projectId: "apartment-hunt-dhaka",
+  storageBucket: "apartment-hunt-dhaka.appspot.com",
+  messagingSenderId: "506913008211",
+  appId: "1:506913008211:web:e48d39d8904314658f74a6"
 };

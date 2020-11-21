@@ -1,11 +1,14 @@
-import React from 'react';
+import { useHistory } from 'react-router-dom';
 import logo from '../../../logos/Logo.png'
 const Navbar = () => {
-
-  const userToken = localStorage.getItem('userToken');
-
-  const logOut = () => {
+  let history = useHistory()
+  const Login = () => {
+    history.push('/dashboard')
+  }
+  const LogOut = () => {
     localStorage.clear();
+    window.location.reload(false)
+    history.push('/home')
   }
 
   return (
@@ -27,7 +30,7 @@ const Navbar = () => {
             <a className="nav-link active" href="#">Service</a>
           </li>
           <li className="nav-item mr-3">
-            <a className="nav-link active" href="#">Concerns</a>
+            <a className="nav-link active" href="/dashboard">Dashboard</a>
           </li>
           <li className="nav-item mr-3">
             <a className="nav-link active" href="#">Event</a>
@@ -36,13 +39,10 @@ const Navbar = () => {
             <a className="nav-link active" href="#">Contact</a>
           </li>
           <li className="nav-item  ">
-            {!userToken ? <a href="/login"><button className="btn text-white mr-5" style={{ backgroundColor: "#275A53" }}>Log In</button></a>
-              :
-              <>
-                <a href="/dashboard/booking"><button className="btn text-white mr-3" style={{ backgroundColor: "#275A53" }}>Dashboard</button></a>
-                <button onClick={logOut} className="btn text-white mr-5" style={{ backgroundColor: "#275A53" }}>Log Out</button>
-              </>}
 
+            {
+              localStorage.getItem('email') ? <button className="btn text-white mr-5" style={{ backgroundColor: "#275A53" }} onClick={() => LogOut()}>Log Out</button> : <button onClick={() => Login()} className="btn text-white mr-5" style={{ backgroundColor: "#275A53" }}>Log In</button>
+            }
           </li>
 
         </ul>

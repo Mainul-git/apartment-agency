@@ -9,7 +9,6 @@ const Home = () => {
         <div >
             <Header />
             <ApartmentCard />
-           {/* check */}
             <Services />
             <Footer />
         </div>

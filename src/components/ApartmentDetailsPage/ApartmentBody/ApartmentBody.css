@@ -10,3 +10,10 @@
 .pic-not-active {
     border: 5px solid white;
 }
+.common-color{
+    color: #16322E;
+}
+.price{
+    position: absolute !;
+    margin-right: 0 !;
+}

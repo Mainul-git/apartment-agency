@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import loading from'../../../logos/loading.gif'
 import ApartmentCardChild from '../ApartmentCardChild/ApartmentCardChild';
-const ApartmentCard = () => {
+import {addApartment} from'../../../Redux/actions/apartmentActions';
+import { connect } from 'react-redux';
+const ApartmentCard = (props) => {
+    console.log(props)
+    const{addApartment}=props
     const[apartments,setApartments]=useState([])
     useEffect(() =>{
-        fetch('http://localhost:5000/allapartment')
+        fetch('https://still-eyrie-70695.herokuapp.com/allapartment')
         .then(response =>response.json())
         .then(data =>{
             if(data){
@@ -22,11 +26,20 @@ const ApartmentCard = () => {
             </div>
             <section className="row w-75 m-auto ">
                 {
-                    apartments.length===0?<img src={loading} alt=""/>:apartments.map(apartment=><ApartmentCardChild apartment={apartment} key={apartment._id}></ApartmentCardChild>)
+                    apartments.length===0?<img src="https://i.ibb.co/kBnQx2n/200.gif" alt=""/>:apartments.map(apartment=><ApartmentCardChild apartment={apartment} addApartment={addApartment} key={apartment._id}></ApartmentCardChild>)
                 }
             </section>
         </div>
     );
 };
+const mapStateToProps = state =>{
+  return {
+      apartment:state.apartment
+  }
+}
 
-export default ApartmentCard;
+const mapDispatchToProps = {
+ addApartment:addApartment
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApartmentCard) ;
