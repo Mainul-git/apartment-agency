@@ -3,38 +3,58 @@ import OrderListAdminSingle from '../BookingSingle/BookingSingle';
 
 const Booking = () => {
 
-    const [orderList, setOrderList] = useState([]);
-
-    const name = JSON.parse(localStorage.getItem("name"));
-
+    const [customers, setCustomers] = useState([]);
+    const allCustomer = () => {
+        fetch('https://still-eyrie-70695.herokuapp.com/allCustomer')
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    setCustomers(data)
+                    // data.map(customer =>setStatus(customer.status))
+                 }
+            })
+    }
+    const handleChange = (e, id) => {
+        let updateStatus=e.target.value
+         console.log('handleChange',updateStatus)
+         fetch(`https://still-eyrie-70695.herokuapp.com/updateStatus/${id}`,{
+             method: 'PATCH',
+             headers:{'Content-type': 'application/json'},
+             body: JSON.stringify({updateStatus})
+         })
+         .then(result=>{
+             if(result){
+                allCustomer()
+                alert('status updated successfully')
+             }
+         } )
+        }
     useEffect(() => {
-        fetch('https://creative-agency18.herokuapp.com/order')
-            .then(res => res.json())
-            .then(data => setOrderList(data));
+       allCustomer()
     }, [])
 
     return (
         <div>
             <div className="mt-5 mr-5 d-flex justify-content-between">
                 <h3>Booking List</h3>
-                <h3>{name}</h3>
+                <h3></h3>
             </div>
             {
-                orderList.length > 0 ?
+                customers.length > 0 ?
                     <div className="order-box p-5 mt-5">
                         <table className="table" style={{backgroundColor: 'white'}}>
                             <thead style={{backgroundColor: '#F4F7FC'}}>
                                 <tr>
                                     <th>Name</th>
                                     <th>Email Id</th>
-                                    <th>Service</th>
-                                    <th>Product Details</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    orderList.map(order => <OrderListAdminSingle order={order} />)
+                                    customers.map(customer => <OrderListAdminSingle customer={customer}  handleChange={handleChange}/>)
                                 }
                             </tbody>
                         </table>

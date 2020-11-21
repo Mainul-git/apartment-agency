@@ -6,7 +6,8 @@ const AddHouse = () => {
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
-
+    console.log(file)
+    console.log(info)
     const handleBlur = (e) => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;
@@ -14,24 +15,28 @@ const AddHouse = () => {
     }
 
     const handleFileChange = (e) => {
-        const newFile = e.target.files[0];
+        const newFile = e.target.filesinfo
         setFile(newFile);
     }
 
     const handleSubmit = (e) => {
         const formData = new FormData();
-        formData.append('file', file);
-        formData.append('name', info.name);
-        formData.append('description', info.description);
+        formData.append('file', file)
+        formData.append('title', info.title)
+        formData.append('price', info.price)
+        formData.append('location', info.location)
+        formData.append('bathroom', info.bathroom)
+        formData.append('bedroom', info.bedroom)
 
-        fetch('https://creative-agency18.herokuapp.com/addService', {
+        fetch('https://still-eyrie-70695.herokuapp.com/addapartment', {
             method: 'POST',
             body: formData
         })
             .then(res => res.json())
             .then(data => {
-                history.replace('/');
-                history.go(0);
+                // history.replace('/');
+                // history.go(0);
+                alert('apartment added successfully')
             });
         e.preventDefault();
     }
@@ -46,7 +51,7 @@ const AddHouse = () => {
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>House Title</label>
-                                <input onBlur={handleBlur} name="name" className="form-control" type="text" placeholder="Enter title" required/>
+                                <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter title" required/>
                             </div>
                             <div className="form-group">
                                 <label>Location</label>
@@ -69,7 +74,7 @@ const AddHouse = () => {
                             </div>
                             <div className="form-group">
                                 <label>Thumbnail</label><br />
-                                <input onChange={handleFileChange} type="file" required/>
+                                <input  onChange={e => setFile(e.target.files[0])} type="file"  name="file" required/>
                             </div>
                         </div>
                     </div>
